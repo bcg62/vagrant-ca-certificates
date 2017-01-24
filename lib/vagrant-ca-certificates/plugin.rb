@@ -39,6 +39,11 @@ module VagrantPlugins
         Cap::CoreOS::UpdateCertificateBundle
       end
 
+      guest_capability('darwin', 'update_certificate_bundle') do
+        require_relative 'cap/darwin/update_certificate_bundle'
+        Cap::Darwin::UpdateCertificateBundle
+      end
+
       guest_capability('debian', 'certificate_upload_path') do
         require_relative 'cap/debian/certificate_upload_path'
         Cap::Debian::CertificateUploadPath
@@ -54,6 +59,11 @@ module VagrantPlugins
         Cap::CoreOS::CertificateUploadPath
       end
 
+      guest_capability('darwin', 'certificate_upload_path') do
+        require_relative 'cap/darwin/certificate_upload_path'
+        Cap::Darwin::CertificateUploadPath
+      end
+
       guest_capability('debian', 'certificate_file_bundle') do
         require_relative 'cap/debian/certificate_file_bundle'
         Cap::Debian::CertificateFileBundle
@@ -67,6 +77,11 @@ module VagrantPlugins
       guest_capability('coreos', 'certificate_file_bundle') do
         require_relative 'cap/coreos/certificate_file_bundle'
         Cap::CoreOS::CertificateFileBundle
+      end
+
+      guest_capability('darwin', 'certificate_file_bundle') do
+        require_relative 'cap/darwin/certificate_file_bundle'
+        Cap::Darwin::CertificateFileBundle
       end
     end
   end
